@@ -6,7 +6,7 @@ import AddIcecream from '../pages/Admin/AddIcecream';
 import Inventory from '../pages/Admin/Inventory';
 import Login from '../pages/Admin/Login';
 
-const AllRoutes = () => {
+export const AllRoutes = () => {
   return (
     <div>
         <Routes>
