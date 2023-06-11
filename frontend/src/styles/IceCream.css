@@ -1,0 +1,120 @@
+.parentContainer {
+    padding: 15px;
+}
+
+.searchContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchContainer>div:nth-child(1) {
+    width: 30%;
+}
+
+.searchContainer>div:nth-child(1)>Input {
+    width: 80%;
+}
+
+.searchContainer>div:nth-child(1)>Button {
+    margin-bottom: 5px;
+}
+
+.searchContainer>div:nth-child(2) {
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.tableContainer{
+    width: 90%;
+    margin: auto;
+    margin-top:50px;
+    color: black;
+}
+
+Th{
+    border: 1px solid red;
+}
+
+#loader{
+    margin-left:350px;
+    width:100%;
+    height:300px
+}
+
+
+@media screen and (min-width:901px) and (max-width: 1200px) {
+    .searchContainer>div:nth-child(1) {
+        width: 90%;
+    }
+    .searchContainer>div:nth-child(2) {
+        width: 70%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    #loader{
+        margin-left:170px;
+        width:100%;
+        height:300px
+    }
+  
+  }
+
+@media screen and (min-width:601px) and (max-width: 900px) {
+    .searchContainer>div:nth-child(1) {
+        width: 80%;
+    }
+    .searchContainer>div:nth-child(2) {
+        width: 60%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    #loader{
+        margin-left:150px;
+        width:100%;
+        height:300px
+    }
+  
+  }
+
+
+@media (max-width: 600px) {
+    .tableContainer{
+        width: 100%;
+        margin: auto;
+        margin-top:50px;
+        color: black;
+    }
+    .searchContainer {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: auto;
+    }
+    .searchContainer>div:nth-child(1) {
+        width: 100%;
+    }
+    .searchContainer>div:nth-child(1)>#sbtn{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .searchContainer>div:nth-child(1)>Input {
+        width: 100%;
+    }
+    .searchContainer>div:nth-child(2) {
+        width: 80%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: auto;
+    }
+    #loader{
+        margin-left:50px;
+        width:100%;
+        height:300px
+    }
+ }
