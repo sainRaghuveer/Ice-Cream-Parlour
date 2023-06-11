@@ -14,11 +14,11 @@ import {
   useToast,
   Skeleton,
 } from "@chakra-ui/react";
-import "../styles/iceCream.css";
+import "../../styles/IceCream.css";
 import { AiOutlinePlus } from "react-icons/ai"
 import { useNavigate } from 'react-router-dom';
 import UseToast from '../../customHook/UseToast';
-import {dataCard} from "../../components/dataCard"
+import {Datacard} from "../../components/Datacard"
 import { Spinner } from '@chakra-ui/react'
 
 const Home = () => {
@@ -35,9 +35,10 @@ const Home = () => {
       setLoading(true);
       const response = await fetch(`http://localhost:3000/iceCream`);
       const res = await response.json();
+      console.log(res)
       if (response.ok) {
         setData([]);
-        setData(res.data);
+        setData(res);
         setLoading(false);
       } else {
         console.log('Failed to fetch users data');
@@ -108,7 +109,7 @@ const Home = () => {
                 emptyColor='gray.200'
                 color='blue.500'
                 size='xl' /> <h1>Please Wait while data loading...</h1></div> : data.length > 0 && data.map((user) => (
-                  <dataCard key={user._id} data={user} getData={getData} />
+                  <Datacard key={user.id} data={user} getData={getData} />
                 ))}
 
             </Tbody>

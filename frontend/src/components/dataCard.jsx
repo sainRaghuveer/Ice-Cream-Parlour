@@ -4,7 +4,7 @@ import { DeleteIcon } from "@chakra-ui/icons";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import ActionMenu from './ActionMenu';
 
-const dataCard = ({ data, getData, loading }) => {
+const DataCard = ({ data, getData, loading }) => {
   return (
     <>
       <Tr style={{ border: "2px solid teal" }}>
@@ -20,4 +20,4 @@ const dataCard = ({ data, getData, loading }) => {
   )
 }
 
-export default dataCard
+export default DataCard
