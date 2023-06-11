@@ -18,8 +18,8 @@ import "../../styles/IceCream.css";
 import { AiOutlinePlus } from "react-icons/ai"
 import { useNavigate } from 'react-router-dom';
 import UseToast from '../../customHook/UseToast';
-import {Datacard} from "../../components/Datacard"
 import { Spinner } from '@chakra-ui/react'
+import IceCreamCard from '../../components/IceCreamcard';
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -90,7 +90,7 @@ const Home = () => {
       <div className='tableContainer'>
         <TableContainer>
           <Table variant='striped'>
-            <TableCaption>All Users will be here</TableCaption>
+            <TableCaption>All IceCreams will be here</TableCaption>
             <Thead>
               <Tr>
                 <Th>Id</Th>
@@ -109,7 +109,7 @@ const Home = () => {
                 emptyColor='gray.200'
                 color='blue.500'
                 size='xl' /> <h1>Please Wait while data loading...</h1></div> : data.length > 0 && data.map((user) => (
-                  <Datacard key={user.id} data={user} getData={getData} />
+                  <IceCreamCard key={user.id} data={user} getData={getData} />
                 ))}
 
             </Tbody>
