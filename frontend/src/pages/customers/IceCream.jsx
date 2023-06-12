@@ -77,14 +77,7 @@ const Home = () => {
         </div>
         <div>
           <Button onClick={() => navigate("/register")}><AiOutlinePlus /> Add User</Button>
-          {csvLoading ? <Button
-            isLoading
-            loadingText='Wait...'
-            colorScheme='blue'
-            variant='outline'
-          >
-            Submit
-          </Button> : <Button >{"Export to Csv"}</Button>}
+        <Button onClick={()=>navigate("/cart")}>{"Cart"}</Button>
         </div>
       </div>
       <div className='tableContainer'>
