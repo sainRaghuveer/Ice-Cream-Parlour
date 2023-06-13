@@ -76,7 +76,7 @@ const Home = () => {
           <Button id='sbtn' onClick={handleQuery}>Search</Button>
         </div>
         <div>
-          <Button onClick={() => navigate("/register")}><AiOutlinePlus /> Add User</Button>
+          <Button onClick={() => navigate("/inventory")}>Admin</Button>
         <Button onClick={()=>navigate("/cart")}>{"Cart"}</Button>
         </div>
       </div>
