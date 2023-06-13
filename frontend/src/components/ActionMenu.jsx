@@ -14,8 +14,8 @@ import { ChevronDownIcon, EditIcon, DeleteIcon } from "@chakra-ui/icons";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import UserUpdateModal from './UserUpdateModal';
 import UseToast from '../customHook/UseToast';
+import IceCreamUpdateModal from './IceCreamUpdateMOdal';
 
 const ActionMenu = ({ id, getData, data }) => {
     const navigate = useNavigate();
@@ -45,7 +45,7 @@ const ActionMenu = ({ id, getData, data }) => {
                     {<BsThreeDotsVertical />}
                 </MenuButton>
                 <MenuList>
-                    <MenuItem >{<UserUpdateModal/>}</MenuItem>
+                    <MenuItem >{<IceCreamUpdateModal/>}</MenuItem>
                     <MenuItem onClick={handleDelete}>{<DeleteIcon />} {" "}Delete</MenuItem>
                 </MenuList>
             </Menu>
