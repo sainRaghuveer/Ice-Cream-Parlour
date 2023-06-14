@@ -19,7 +19,7 @@ import { AiOutlinePlus } from "react-icons/ai"
 import { useNavigate } from 'react-router-dom';
 import UseToast from '../../customHook/UseToast';
 import { Spinner } from '@chakra-ui/react'
-import IceCreamCard from '../../components/IceCreamcard';
+import UserIceCreamCard from '../../components/UserIceCearmCard';
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -102,7 +102,7 @@ const Home = () => {
                 emptyColor='gray.200'
                 color='blue.500'
                 size='xl' /> <h1>Please Wait while data loading...</h1></div> : data.length > 0 && data.map((user) => (
-                  <IceCreamCard key={user.id} data={user} getData={getData} />
+                  <UserIceCreamCard key={user.id} data={user} getData={getData} />
                 ))}
 
             </Tbody>
