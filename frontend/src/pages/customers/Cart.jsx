@@ -15,7 +15,6 @@ import {
   Skeleton,
 } from "@chakra-ui/react";
 import "../../styles/IceCream.css";
-import { AiOutlinePlus } from "react-icons/ai"
 import { useNavigate } from 'react-router-dom';
 import UseToast from '../../customHook/UseToast';
 import { Spinner } from '@chakra-ui/react'
@@ -33,7 +32,7 @@ const Cart = () => {
   const getData = useCallback(async () => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:3000/iceCream`);
+      const response = await fetch(`http://localhost:3000/cart`);
       const res = await response.json();
       console.log(res)
       if (response.ok) {
@@ -76,8 +75,8 @@ const Cart = () => {
           <Button id='sbtn' onClick={handleQuery}>Search</Button>
         </div>
         <div>
-          <Button onClick={() => navigate("/register")}><AiOutlinePlus /> Add IceCream</Button>
-        <Button onClick={()=>navigate("/")}>{"Login"}</Button>
+          <Button onClick={() => navigate("/register")} style={{display:"none"}}> Add IceCream</Button>
+        <Button onClick={()=>navigate("/")} style={{display:"none"}}>{"Login"}</Button>
         </div>
       </div>
       <div className='tableContainer'>
@@ -91,7 +90,7 @@ const Cart = () => {
                 <Th>Flavour</Th>
                 <Th>Description</Th>
                 <Th>Price</Th>
-                <Th>Stock</Th>
+                <Th>Quantity</Th>
                 <Th>Add to Cart</Th>
               </Tr>
             </Thead>
@@ -101,7 +100,7 @@ const Cart = () => {
                 speed='0.65s'
                 emptyColor='gray.200'
                 color='blue.500'
-                size='xl' /> <h1>Please Wait while data loading...</h1></div> : data.length > 0 && data.map((user) => (
+                size='xl' /> <h1>Please Wait while data loading...</h1></div> : data.length==0 ? <div id='loader'><h1 style={{marginTop:"50px"}}>Your cart is empty</h1></div>: data.length > 0 && data.map((user) => (
                   <CartCard key={user.id} data={user} getData={getData} />
                 ))}
 
