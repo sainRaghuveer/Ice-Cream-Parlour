@@ -40,7 +40,7 @@ const Cart = () => {
         setData(res);
         setLoading(false);
       } else {
-        console.log('Failed to fetch users data');
+        console.log('Failed to fetch IceCream data');
       }
     } catch (error) {
       setLoading(false);

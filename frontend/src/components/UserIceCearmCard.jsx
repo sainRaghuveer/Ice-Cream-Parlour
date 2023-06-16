@@ -3,9 +3,12 @@ import { Tr, Td, Image, Skeleton, Button } from "@chakra-ui/react";
 import { DeleteIcon } from "@chakra-ui/icons";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import axios from 'axios';
+import UseToast from '../customHook/UseToast';
+
 
 
 const UserIceCreamCard = ({ data, getData, loading }) => {
+  const toastMsg = UseToast();
 
   const handleCart=()=>{
     let obj={
@@ -18,8 +21,16 @@ const UserIceCreamCard = ({ data, getData, loading }) => {
     
     axios.post(`http://localhost:3000/cart`,obj).then((res)=>{
       console.log(res);
+      toastMsg({
+        title: `Added into cart`,
+        status: "success"
+      });
     }).catch((error)=>{
       console.log(error);
+      toastMsg({
+        title: `${error.message}`,
+        status: "error"
+      });
     })
   }
   return (
