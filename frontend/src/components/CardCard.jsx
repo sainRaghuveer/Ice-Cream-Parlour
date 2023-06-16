@@ -13,7 +13,7 @@ const CartCard = ({ data, getData, loading }) => {
         <Td>{data.Flavor}</Td>
         <Td>{data.Description}</Td>
         <Td>{data.Price}</Td>
-        <Td>{data.Stock}</Td>
+        <Td>{data.Quantity}</Td>
         <Td><Button>{"Order"}</Button></Td>
       </Tr>
     </>
