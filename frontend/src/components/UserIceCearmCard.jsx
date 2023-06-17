@@ -9,10 +9,12 @@ import UseToast from '../customHook/UseToast';
 
 const UserIceCreamCard = ({ data, getData, loading }) => {
   const [iceCream, setIceCream] = useState(1);
-  const [stocks, setStock] = useState();
+  const [stocks, setStock] = useState(data.stock);
   const toastMsg = UseToast();
 
   const handleCart=()=>{
+    let remainingStocks = (data.Stock-iceCream);
+
     let obj={
       name:data.name,
       Flavor:data.Flavor,
@@ -33,7 +35,14 @@ const UserIceCreamCard = ({ data, getData, loading }) => {
         title: `${error.message}`,
         status: "error"
       });
-    })
+    });
+
+    axios.patch(`http://localhost:3000/iceCream/${data.id}`, {Stock:remainingStocks}).then((res)=>{
+      console.log(res);
+      getData();
+    }).catch((error)=>{
+      console.log(error);
+    });
   }
   return (
     <>
