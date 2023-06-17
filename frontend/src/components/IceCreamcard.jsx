@@ -9,7 +9,7 @@ const IceCreamCard = ({ data, getData, loading }) => {
     <>
       <Tr style={{ border: "2px solid teal" }}>
         <Td>{data.id}</Td>
-        <Td>{data.name}{" "}{data.lastName}</Td>
+        <Td>{data.name}</Td>
         <Td>{data.Flavor}</Td>
         <Td>{data.Description}</Td>
         <Td>{data.Price}</Td>
