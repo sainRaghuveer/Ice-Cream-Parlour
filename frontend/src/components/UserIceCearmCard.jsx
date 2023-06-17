@@ -8,7 +8,7 @@ import UseToast from '../customHook/UseToast';
 
 
 const UserIceCreamCard = ({ data, getData, loading }) => {
-  const [iceCream, setIceCream] = useState(0);
+  const [iceCream, setIceCream] = useState(1);
   const toastMsg = UseToast();
 
   const handleCart=()=>{
