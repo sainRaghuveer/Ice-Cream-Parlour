@@ -13,18 +13,21 @@ import {
   TableContainer,
   useToast,
   Skeleton,
+  Box,
 } from "@chakra-ui/react";
 import "../../styles/IceCream.css";
 import { useNavigate } from 'react-router-dom';
 import UseToast from '../../customHook/UseToast';
 import { Spinner } from '@chakra-ui/react'
 import CartCard from '../../components/CardCard';
+import { makePayment } from '../../utils/razorpay';
 
 const Cart = () => {
   const [data, setData] = useState([]);
   const [csvLoading, setCsvLoading] = useState(false);
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
+  const [total, setTotal] = useState()
   const navigate = useNavigate();
   const toastMsg = UseToast();
 
@@ -39,6 +42,12 @@ const Cart = () => {
         setData([]);
         setData(res);
         setLoading(false);
+        let sum=0;
+        data.forEach((el, index)=>{
+          let num = (el.Price*el.Quantity);
+          sum+=num;
+        });
+        setTotal(sum);
       } else {
         console.log('Failed to fetch IceCream data');
       }
@@ -65,6 +74,10 @@ const Cart = () => {
 
   const handleQuery = () => {
     getData();
+  };
+
+  const handlePayment=()=>{
+    makePayment(total);
   }
 
   return (
@@ -91,7 +104,6 @@ const Cart = () => {
                 <Th>Description</Th>
                 <Th>Price</Th>
                 <Th>Quantity</Th>
-                <Th>Add to Cart</Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -101,11 +113,12 @@ const Cart = () => {
                 emptyColor='gray.200'
                 color='blue.500'
                 size='xl' /> <h1>Please Wait while data loading...</h1></div> : data.length==0 ? <div id='loader'><h1 style={{marginTop:"50px"}}>Your cart is empty</h1></div>: data.length > 0 && data.map((user) => (
-                  <CartCard key={user.id} data={user} getData={getData} />
+                  <CartCard key={user.id} data={user} getData={getData}/>
                 ))}
 
             </Tbody>
           </Table>
+          <Box><Button onClick={handlePayment}>{"Order"}</Button></Box>
         </TableContainer>
       </div>
     </div>
