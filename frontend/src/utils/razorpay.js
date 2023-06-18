@@ -14,7 +14,7 @@ export const makePayment = (total) => {
         },
         "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information, especially their phone number
             "name": "raghuveer Sain", //your customer's name
-            "email": "raghuveersain987@example.com",
+            "email": "raghuveersain987@gmail.com",
             "contact": "1234567890"  //Provide the customer's phone number for better conversion rates 
         },
         "notes": {
