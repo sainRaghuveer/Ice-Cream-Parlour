@@ -129,22 +129,6 @@
       "Price": 200,
       "Quantity": 1,
       "id": 13
-    },
-    {
-      "name": "Neapolitan",
-      "Flavor": "Strawberry",
-      "Description": "Fresh and fruity strawberry ice cream.",
-      "Price": 300,
-      "Quantity": 1,
-      "id": 14
-    },
-    {
-      "name": "Classic Vanilla",
-      "Flavor": "Vanilla",
-      "Description": "Classic vanilla ice cream.",
-      "Price": 200,
-      "Quantity": 1,
-      "id": 15
     }
   ]
 }
