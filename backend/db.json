@@ -6,7 +6,7 @@
       "Flavor": "Chocolate",
       "Description": "Rich, creamy chocolate ice cream.",
       "Price": 250,
-      "Stock": 10
+      "Stock": 7
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "Flavor": "Vanilla",
       "Description": "Classic vanilla ice cream.",
       "Price": 200,
-      "Stock": 13
+      "Stock": 6
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "Flavor": "Strawberry",
       "Description": "Fresh and fruity strawberry ice cream.",
       "Price": 300,
-      "Stock": 8
+      "Stock": 6
     }
   ],
   "cart": [
@@ -89,6 +89,78 @@
       "Price": 250,
       "Quantity": "8",
       "id": 8
+    },
+    {
+      "name": "Dark Chocolate",
+      "Flavor": "Chocolate",
+      "Description": "Rich, creamy chocolate ice cream.",
+      "Price": 250,
+      "Quantity": "2",
+      "id": 9
+    },
+    {
+      "name": "Classic Vanilla",
+      "Flavor": "Vanilla",
+      "Description": "Classic vanilla ice cream.",
+      "Price": 200,
+      "Quantity": "3",
+      "id": 10
+    },
+    {
+      "name": "Dark Chocolate",
+      "Flavor": "Chocolate",
+      "Description": "Rich, creamy chocolate ice cream.",
+      "Price": 250,
+      "Quantity": 1,
+      "id": 11
+    },
+    {
+      "name": "Dark Chocolate",
+      "Flavor": "Chocolate",
+      "Description": "Rich, creamy chocolate ice cream.",
+      "Price": 250,
+      "Quantity": 1,
+      "id": 12
+    },
+    {
+      "name": "Classic Vanilla",
+      "Flavor": "Vanilla",
+      "Description": "Classic vanilla ice cream.",
+      "Price": 200,
+      "Quantity": 1,
+      "id": 13
+    },
+    {
+      "name": "Neapolitan",
+      "Flavor": "Strawberry",
+      "Description": "Fresh and fruity strawberry ice cream.",
+      "Price": 300,
+      "Quantity": 1,
+      "id": 14
+    },
+    {
+      "name": "Classic Vanilla",
+      "Flavor": "Vanilla",
+      "Description": "Classic vanilla ice cream.",
+      "Price": 200,
+      "Quantity": 1,
+      "id": 15
+    },
+    {
+      "name": "Neapolitan",
+      "Flavor": "Strawberry",
+      "Description": "Fresh and fruity strawberry ice cream.",
+      "Price": 300,
+      "Quantity": 1,
+      "id": 16
+    },
+    {
+      "name": "Classic Vanilla",
+      "Flavor": "Vanilla",
+      "Description": "Classic vanilla ice cream.",
+      "Price": 200,
+      "Quantity": "2",
+      "id": 17
     }
   ]
 }

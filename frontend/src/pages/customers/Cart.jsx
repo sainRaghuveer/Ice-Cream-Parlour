@@ -32,14 +32,13 @@ const Cart = () => {
   const toastMsg = UseToast();
 
 
-  const getData = useCallback(async () => {
+  const getData = async () => {
     try {
       setLoading(true);
       const response = await fetch(`http://localhost:3000/cart`);
       const res = await response.json();
       console.log(res)
       if (response.ok) {
-        setData([]);
         setData(res);
         setLoading(false);
         let sum=0;
@@ -47,6 +46,7 @@ const Cart = () => {
           let num = (el.Price*el.Quantity);
           sum+=num;
         });
+        console.log("totalSum", sum)
         setTotal(sum);
       } else {
         console.log('Failed to fetch IceCream data');
@@ -59,7 +59,7 @@ const Cart = () => {
         status: "error"
       });
     }
-  }, []);
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -69,7 +69,7 @@ const Cart = () => {
     return () => {
       clearTimeout(timer);
     };
-  }, []);
+  }, [total]);
 
 
   const handleQuery = () => {
@@ -118,7 +118,7 @@ const Cart = () => {
 
             </Tbody>
           </Table>
-          <Box><Button onClick={handlePayment}>{"Place Order"}</Button></Box>
+          <Box><Button onClick={handlePayment}>{"Place Your Order"}</Button></Box>
         </TableContainer>
       </div>
     </div>
