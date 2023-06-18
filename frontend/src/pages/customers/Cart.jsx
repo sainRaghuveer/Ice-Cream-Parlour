@@ -89,7 +89,7 @@ const Cart = () => {
         </div>
         <div>
           <Button onClick={() => navigate("/register")} style={{display:"none"}}> Add IceCream</Button>
-        <Button onClick={()=>navigate("/")} style={{display:"none"}}>{"Login"}</Button>
+        <Button >Total Amount: {total}</Button>
         </div>
       </div>
       <div className='tableContainer'>
@@ -118,7 +118,7 @@ const Cart = () => {
 
             </Tbody>
           </Table>
-          <Box><Button onClick={handlePayment}>{"Order"}</Button></Box>
+          <Box><Button onClick={handlePayment}>{"Place Order"}</Button></Box>
         </TableContainer>
       </div>
     </div>
