@@ -113,22 +113,6 @@
       "Price": 250,
       "Quantity": 1,
       "id": 11
-    },
-    {
-      "name": "Dark Chocolate",
-      "Flavor": "Chocolate",
-      "Description": "Rich, creamy chocolate ice cream.",
-      "Price": 250,
-      "Quantity": 1,
-      "id": 12
-    },
-    {
-      "name": "Classic Vanilla",
-      "Flavor": "Vanilla",
-      "Description": "Classic vanilla ice cream.",
-      "Price": 200,
-      "Quantity": 1,
-      "id": 13
     }
   ]
 }
