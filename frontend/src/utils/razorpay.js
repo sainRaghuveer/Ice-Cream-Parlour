@@ -2,7 +2,6 @@ import axios from "axios";
 export const makePayment = async(amount) => {
     //Request to backend
     const data = await axios.post(`https://tender-bear-school-uniform.cyclic.app/create-order`, {amount});
-    console.log(data.data.id)
 
     var options = {
         "key": "rzp_test_QYlrHuVo3qPFle", // Enter the Key ID generated from the Dashboard
