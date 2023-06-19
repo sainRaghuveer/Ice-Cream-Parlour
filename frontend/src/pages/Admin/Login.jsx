@@ -15,6 +15,7 @@ import {
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import UseToast from '../../customHook/UseToast';
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -22,6 +23,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [token, setToken] = useState("");
   const navigate = useNavigate();
+  const toastMsg = UseToast();
 
 
   const handleLogin = () => {
@@ -35,10 +37,18 @@ export default function Login() {
       setToken(res.data.token);
       setLoading(false);
       sessionStorage.setItem('Rtoken', res.data.token);
+      toastMsg({
+        title: `Admin logged in successfully`,
+        status: "success"
+      });
       navigate("/inventory");
     }).catch((error) => {
       setLoading(false);
       console.log(error);
+      toastMsg({
+        title: `${error.message}`,
+        status: "error"
+      });
     });
     setEmail("");
     setPassword("");

@@ -68,6 +68,11 @@ const Home = () => {
     getData();
   }
 
+  const handleLogout = () => {
+    sessionStorage.clear();
+    navigate("/")
+  }
+
   return (
     <div className='parentContainer'>
       <div className='searchContainer'>
@@ -76,8 +81,11 @@ const Home = () => {
           <Button id='sbtn' onClick={handleQuery}>Search</Button>
         </div>
         <div>
-          <Button onClick={() => navigate("/register")}><AiOutlinePlus /> Add IceCream</Button>
-        <Button onClick={()=>navigate("/")}>{"Login"}</Button>
+          <Button onClick={() => navigate("/addicecream")}><AiOutlinePlus /> Add IceCream</Button>
+        <Button 
+        onClick={handleLogout}>
+          {"Logout"}
+          </Button>
         </div>
       </div>
       <div className='tableContainer'>
