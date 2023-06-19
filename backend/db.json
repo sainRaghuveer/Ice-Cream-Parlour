@@ -6,7 +6,7 @@
       "Flavor": "Chocolate",
       "Description": "Rich, creamy chocolate ice cream.",
       "Price": 250,
-      "Stock": 68
+      "Stock": 64
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "Flavor": "Vanilla",
       "Description": "Classic vanilla ice cream.",
       "Price": 200,
-      "Stock": 60
+      "Stock": 58
     },
     {
       "id": 3,
@@ -57,6 +57,30 @@
       "Price": 250,
       "Quantity": "2",
       "id": 4
+    },
+    {
+      "name": "Dark Chocolate",
+      "Flavor": "Chocolate",
+      "Description": "Rich, creamy chocolate ice cream.",
+      "Price": 250,
+      "Quantity": "2",
+      "id": 5
+    },
+    {
+      "name": "Dark Chocolate",
+      "Flavor": "Chocolate",
+      "Description": "Rich, creamy chocolate ice cream.",
+      "Price": 250,
+      "Quantity": "2",
+      "id": 6
+    },
+    {
+      "name": "Classic Vanilla",
+      "Flavor": "Vanilla",
+      "Description": "Classic vanilla ice cream.",
+      "Price": 200,
+      "Quantity": "2",
+      "id": 7
     }
   ]
 }

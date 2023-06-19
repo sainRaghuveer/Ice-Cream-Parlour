@@ -1,12 +1,17 @@
-export const makePayment = (total) => {
+import axios from "axios";
+export const makePayment = async(amount) => {
+    //Request to backend
+    const data = await axios.post(`https://tender-bear-school-uniform.cyclic.app/create-order`, {amount});
+    console.log(data.data.id)
+
     var options = {
-        "key": "", // Enter the Key ID generated from the Dashboard
-        "amount": total, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        "key": "rzp_test_QYlrHuVo3qPFle", // Enter the Key ID generated from the Dashboard
+        "amount": +data.data.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
         "currency": "INR",
         "name": "Raghuveer Sain Co.", //your business name
         "description": "Test Transaction",
         "image": "https://example.com/your_logo",
-        "order_id": "", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        "order_id": data.data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
         "handler": function (response) {
             alert(response.razorpay_payment_id);
             alert(response.razorpay_order_id);
@@ -15,7 +20,7 @@ export const makePayment = (total) => {
         "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information, especially their phone number
             "name": "raghuveer Sain", //your customer's name
             "email": "raghuveersain987@gmail.com",
-            "contact": "1234567890"  //Provide the customer's phone number for better conversion rates 
+            "contact": "+918440874898"  //Provide the customer's phone number for better conversion rates 
         },
         "notes": {
             "address": "Razorpay Corporate Office"

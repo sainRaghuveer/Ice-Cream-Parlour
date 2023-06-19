@@ -24,7 +24,7 @@ import { makePayment } from '../../utils/razorpay';
 
 const Cart = () => {
   const [data, setData] = useState([]);
-  const [csvLoading, setCsvLoading] = useState(false);
+  const [paymentLoading, setPaymentLoading] = useState(false);
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
   const [total, setTotal] = useState()
@@ -41,10 +41,10 @@ const Cart = () => {
       if (response.ok) {
         setData(res);
         setLoading(false);
-        let sum=0;
-        data.forEach((el, index)=>{
-          let num = (el.Price*el.Quantity);
-          sum+=num;
+        let sum = 0;
+        data.forEach((el, index) => {
+          let num = (el.Price * el.Quantity);
+          sum += num;
         });
         console.log("totalSum", sum)
         setTotal(sum);
@@ -76,8 +76,12 @@ const Cart = () => {
     getData();
   };
 
-  const handlePayment=()=>{
+  const handlePayment = () => {
+    setPaymentLoading(true);
+    console.log("before",paymentLoading)
     makePayment(total);
+    setPaymentLoading(false);
+    console.log("after",paymentLoading)
   }
 
   return (
@@ -88,8 +92,8 @@ const Cart = () => {
           <Button id='sbtn' onClick={handleQuery}>Search</Button>
         </div>
         <div>
-          <Button onClick={() => navigate("/register")} style={{display:"none"}}> Add IceCream</Button>
-        <Button >Total Amount: {total}</Button>
+          <Button onClick={() => navigate("/register")} style={{ display: "none" }}> Add IceCream</Button>
+          <Button >Total Amount: {total}</Button>
         </div>
       </div>
       <div className='tableContainer'>
@@ -107,18 +111,31 @@ const Cart = () => {
               </Tr>
             </Thead>
             <Tbody>
-              {loading ?<div id='loader'> <Spinner
+              {loading ? <div id='loader'> <Spinner
                 thickness='4px'
                 speed='0.65s'
                 emptyColor='gray.200'
                 color='blue.500'
-                size='xl' /> <h1>Please Wait while data loading...</h1></div> : data.length==0 ? <div id='loader'><h1 style={{marginTop:"50px"}}>Your cart is empty</h1></div>: data.length > 0 && data.map((user) => (
-                  <CartCard key={user.id} data={user} getData={getData}/>
+                size='xl' /> <h1>Please Wait while data loading...</h1></div> : data.length == 0 ? <div id='loader'><h1 style={{ marginTop: "50px" }}>Your cart is empty</h1></div> : data.length > 0 && data.map((user) => (
+                  <CartCard key={user.id} data={user} getData={getData} />
                 ))}
 
             </Tbody>
           </Table>
-          <Box><Button onClick={handlePayment}>{"Place Your Order"}</Button></Box>
+          <Box>
+            {paymentLoading ? <Button
+              isLoading
+              loadingText='Submitting'
+              colorScheme='teal'
+              variant='outline'
+            >
+              Submit
+            </Button> : <Button
+              onClick={handlePayment}>
+              {"Place Your Order"}
+            </Button>}
+
+          </Box>
         </TableContainer>
       </div>
     </div>
