@@ -27,18 +27,16 @@ const AddIcecream = () => {
 
   const handleIceCream = async () => {
     let obj = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      mobile: mobile,
-      gender: gender,
-      status: status,
-      location: location,
+      name:name,
+      Flavour:flavour,
+      Description:description,
+      Stock:stock,
+      Price:price
     };
 
     setLoading(true);
     setTimeout(() => {
-      axios.post(`https://upforce-backend.onrender.com/api/user`, obj).then((res) => {
+      axios.post(`http://localhost:3000/iceCream`, obj).then((res) => {
         console.log(res);
         setLoading(false);
         toastMsg({
