@@ -78,10 +78,8 @@ const Cart = () => {
 
   const handlePayment = () => {
     setPaymentLoading(true);
-    console.log("before",paymentLoading)
     makePayment(total);
     setPaymentLoading(false);
-    console.log("after",paymentLoading)
   }
 
   return (

@@ -6,7 +6,7 @@
       "Flavor": "Chocolate",
       "Description": "Rich, creamy chocolate ice cream.",
       "Price": 250,
-      "Stock": 64
+      "Stock": 63
     },
     {
       "id": 2,
@@ -81,6 +81,14 @@
       "Price": 200,
       "Quantity": "2",
       "id": 7
+    },
+    {
+      "name": "Dark Chocolate",
+      "Flavor": "Chocolate",
+      "Description": "Rich, creamy chocolate ice cream.",
+      "Price": 250,
+      "Quantity": 1,
+      "id": 8
     }
   ]
 }
