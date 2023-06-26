@@ -18,15 +18,11 @@ import axios from "axios";
 import UseToast from '../../customHook/UseToast';
 
 const AddIcecream = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [mobile, setMobile] = useState("");
-  const [gender, setGender] = useState("");
-  const [status, setStatus] = useState("");
-  const [location, setLocation] = useState("");
-  const [loading, setLoading] = useState(false);
-  const imageRef = useRef();
+  const [name, setName] = useState("");
+  const [flavour, setFlavour] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const [stock, setStock] = useState("");
   const toastMsg = UseToast();
 
   const handleIceCream = async () => {
