@@ -40,20 +40,13 @@ const AddIcecream = () => {
         console.log(res);
         setLoading(false);
         toastMsg({
-          title: "Data updated successfully",
+          title: "Data Added successfully",
           status: "success"
         });
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setMobile("");
-        setGender("");
-        setStatus("");
-        setLocation("");
       }).catch((error) => {
         setLoading(false);
         toastMsg({
-          title: `${error.response.data.msg}`,
+          title: `${error}`,
           status: "error"
         })
       })
