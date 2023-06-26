@@ -78,9 +78,9 @@ const AddIcecream = () => {
                 <option value="Mint">Mint</option>
               </Select>
             </FormControl>
-            <FormControl id="email">
-              <FormLabel>Email address</FormLabel>
-              <Input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <FormControl id="description">
+              <FormLabel>Description</FormLabel>
+              <Input type="text" placeholder='Description' value={description} onChange={(e) => setDescription(e.target.value)} />
             </FormControl>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
