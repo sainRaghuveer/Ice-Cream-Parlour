@@ -33,9 +33,28 @@ export default function IceCreamUpdateModal({ id, getData, data }) {
     console.log("UpdateData", data)
 
     const handleIceCreamUpdate = async () => {
-        let obj = {
-
+        //If user will not provide any updates then we will not make any api call
+        if (name == data.name && flavour==data.setFlavour && description==data.Description && price==data.Price && stock==data.Stock) {
+            toastMsg({
+                title: `Please provide any update in any of the following input fields`,
+                status: "warning"
+            });
+            return;
         };
+        if (name == "" || flavour == "" || description == "" || price == "" || stock == "") {
+            toastMsg({
+                title: `Please fill input and try again`,
+                status: "warning"
+            });
+            return;
+        };
+        let obj = {
+            name:name,
+            Flavour:flavour,
+            Description:description,
+            Stock:stock,
+            Price:price
+          };
 
         axios.patch(``, obj).then((res) => {
             console.log(res);
