@@ -65,13 +65,9 @@ const AddIcecream = () => {
           id='child1'
         >
           <Stack spacing={4}>
-            <FormControl id="First Name">
-              <FormLabel>First Name</FormLabel>
-              <Input type="text" placeholder='First Name' value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-            </FormControl>
-            <FormControl id="email">
-              <FormLabel>Email address</FormLabel>
-              <Input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <FormControl id="Name">
+              <FormLabel>Name</FormLabel>
+              <Input type="text" placeholder='IceCream Name' value={name} onChange={(e) => setName(e.target.value)} />
             </FormControl>
             <FormControl id="password">
               <FormLabel>Select your Gender</FormLabel>
@@ -80,37 +76,20 @@ const AddIcecream = () => {
                 <option value="female">Female</option>
               </Select>
             </FormControl>
-          </Stack>
-        </Box>
-        <Box
-          w={{ base: "100%", md: "48%" }}
-          rounded={'lg'}
-          bg={useColorModeValue('white', 'gray.700')}
-          p={8}
-          className='child2'>
-          <Stack spacing={4}>
-            <FormControl id="First Name">
-              <FormLabel>Last Name</FormLabel>
-              <Input type="text" placeholder='Last Name' value={lastName} onChange={(e) => setLastName(e.target.value)} />
+            <FormControl id="email">
+              <FormLabel>Email address</FormLabel>
+              <Input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
             </FormControl>
-            <FormControl id="mobile">
-              <FormLabel>Mobile</FormLabel>
-              <Input type="text" placeholder='Mobile' value={mobile} onChange={(e) => setMobile(e.target.value)} />
+            <FormControl id="email">
+              <FormLabel>Email address</FormLabel>
+              <Input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
             </FormControl>
-            <FormControl id="status">
-              <FormLabel>Select your Status</FormLabel>
-              <Select placeholder='Status...' value={status} onChange={(e) => setStatus(e.target.value)}>
-                <option value="active">Active</option>
-                <option value="inactive">InActive</option>
-              </Select>
-            </FormControl>
-            <FormControl id="location">
-              <FormLabel>Enter your Location</FormLabel>
-              <Input type='text' placeholder='location' value={location} onChange={(e) => setLocation(e.target.value)} />
+            <FormControl id="email">
+              <FormLabel>Email address</FormLabel>
+              <Input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
             </FormControl>
           </Stack>
         </Box>
-
       </div>
       <div className='btn'>
         {loading ? <Button
