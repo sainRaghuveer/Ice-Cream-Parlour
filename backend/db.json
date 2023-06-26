@@ -33,69 +33,6 @@
       "Price": 250,
       "Quantity": 1,
       "id": 1
-    },
-    {
-      "name": "Dark Chocolate",
-      "Flavor": "Chocolate",
-      "Description": "Rich, creamy chocolate ice cream.",
-      "Price": 250,
-      "Quantity": 1,
-      "id": 2
-    },
-    {
-      "name": "Dark Chocolate",
-      "Flavor": "Chocolate",
-      "Description": "Rich, creamy chocolate ice cream.",
-      "Price": 250,
-      "Quantity": 1,
-      "id": 3
-    },
-    {
-      "name": "Dark Chocolate",
-      "Flavor": "Chocolate",
-      "Description": "Rich, creamy chocolate ice cream.",
-      "Price": 250,
-      "Quantity": "2",
-      "id": 4
-    },
-    {
-      "name": "Dark Chocolate",
-      "Flavor": "Chocolate",
-      "Description": "Rich, creamy chocolate ice cream.",
-      "Price": 250,
-      "Quantity": "2",
-      "id": 5
-    },
-    {
-      "name": "Dark Chocolate",
-      "Flavor": "Chocolate",
-      "Description": "Rich, creamy chocolate ice cream.",
-      "Price": 250,
-      "Quantity": "2",
-      "id": 6
-    },
-    {
-      "name": "Classic Vanilla",
-      "Flavor": "Vanilla",
-      "Description": "Classic vanilla ice cream.",
-      "Price": 200,
-      "Quantity": "2",
-      "id": 7
-    },
-    {
-      "name": "Dark Chocolate",
-      "Flavor": "Chocolate",
-      "Description": "Rich, creamy chocolate ice cream.",
-      "Price": 250,
-      "Quantity": 1,
-      "id": 8
-    },
-    {
-      "name": "Dark Chocolate",
-      "Description": "xyz",
-      "Price": "130",
-      "Quantity": "4",
-      "id": 9
     }
   ]
 }
