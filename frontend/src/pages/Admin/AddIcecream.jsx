@@ -36,7 +36,7 @@ const AddIcecream = () => {
     };
 
     setLoading(true);
-      axios.post(`http://localhost:3000/iceCream`, obj).then((res) => {
+      axios.post(`https://icecrem-parlour-assignment.onrender.com/iceCream`, obj).then((res) => {
         console.log(res);
         setLoading(false);
         toastMsg({

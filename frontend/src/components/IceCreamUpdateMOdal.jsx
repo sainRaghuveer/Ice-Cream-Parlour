@@ -57,7 +57,7 @@ export default function IceCreamUpdateModal({ id, getData, data }) {
             Price:price
           };
 
-        axios.patch(`http://localhost:3000/iceCream/${id}`, obj).then((res) => {
+        axios.patch(`https://icecrem-parlour-assignment.onrender.com/${id}`, obj).then((res) => {
             console.log(res);
             toastMsg({
                 title: `IceCream data Updated successfully`,

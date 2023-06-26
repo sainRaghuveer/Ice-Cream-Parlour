@@ -23,7 +23,7 @@ const UserIceCreamCard = ({ data, getData, loading }) => {
       Quantity:iceCream
     }
     
-    axios.post(`http://localhost:3000/cart`,obj).then((res)=>{
+    axios.post(`https://icecrem-parlour-assignment.onrender.com/cart`,obj).then((res)=>{
       console.log(res);
       toastMsg({
         title: `Added into cart`,

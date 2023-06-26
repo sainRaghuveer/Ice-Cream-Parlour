@@ -33,7 +33,7 @@ const Home = () => {
   const getData = useCallback(async () => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:3000/iceCream`);
+      const response = await fetch(`https://icecrem-parlour-assignment.onrender.com/iceCream`);
       const res = await response.json();
       console.log(res)
       if (response.ok) {
