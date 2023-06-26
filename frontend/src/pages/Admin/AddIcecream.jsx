@@ -21,8 +21,8 @@ const AddIcecream = () => {
   const [name, setName] = useState("");
   const [flavour, setFlavour] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [stock, setStock] = useState("");
+  const [price, setPrice] = useState(0);
+  const [stock, setStock] = useState(0);
   const toastMsg = UseToast();
 
   const handleIceCream = async () => {
@@ -82,13 +82,13 @@ const AddIcecream = () => {
               <FormLabel>Description</FormLabel>
               <Input type="text" placeholder='Description' value={description} onChange={(e) => setDescription(e.target.value)} />
             </FormControl>
-            <FormControl id="email">
-              <FormLabel>Email address</FormLabel>
-              <Input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <FormControl id="price">
+              <FormLabel>Price</FormLabel>
+              <Input type="number" placeholder='Price' value={price} onChange={(e) => setPrice(e.target.value)} />
             </FormControl>
-            <FormControl id="email">
-              <FormLabel>Email address</FormLabel>
-              <Input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <FormControl id="stock">
+              <FormLabel>Total Stock</FormLabel>
+              <Input type="number" placeholder='Stock' value={stock} onChange={(e) => setStock(e.target.value)} />
             </FormControl>
           </Stack>
         </Box>
