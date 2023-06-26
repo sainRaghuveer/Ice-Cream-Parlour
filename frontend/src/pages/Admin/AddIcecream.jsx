@@ -23,6 +23,7 @@ const AddIcecream = () => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
   const [stock, setStock] = useState(0);
+  const [loading, setLoading] = useState(false);
   const toastMsg = UseToast();
 
   const handleIceCream = async () => {
