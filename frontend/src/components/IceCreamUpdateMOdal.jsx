@@ -9,17 +9,10 @@ import {
     ModalCloseButton,
     useDisclosure,
     Button,
-    Text,
     Box,
     Input,
-    Flex,
     FormControl,
     FormLabel,
-    Checkbox,
-    Stack,
-    Link,
-    Heading,
-    useColorModeValue,
     Select,
 } from '@chakra-ui/react';
 import { EditIcon } from "@chakra-ui/icons";
@@ -28,11 +21,11 @@ import UseToast from '../customHook/UseToast';
 
 
 export default function IceCreamUpdateModal({ id, getData, data }) {
-    const [name, setName] = useState("");
-    const [flavour, setFlavour] = useState("");
-    const [description, setDescription] = useState("");
-    const [price, setPrice] = useState(0);
-    const [stock, setStock] = useState(0);
+    const [name, setName] = useState(data.name);
+    const [flavour, setFlavour] = useState(data.Flavour);
+    const [description, setDescription] = useState(data.Description);
+    const [price, setPrice] = useState(data.Price);
+    const [stock, setStock] = useState(data.Stock);
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [overlay, setOverlay] = React.useState();
     const toastMsg = UseToast();
