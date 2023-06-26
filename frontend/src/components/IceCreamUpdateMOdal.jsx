@@ -32,7 +32,7 @@ export default function IceCreamUpdateModal({ id, getData, data }) {
 
     console.log("UpdateData", data)
 
-    const handleIceCreamUpdate = async () => {
+    const handleIceCreamUpdate = async (id) => {
         //If user will not provide any updates then we will not make any api call
         if (name == data.name && flavour==data.setFlavour && description==data.Description && price==data.Price && stock==data.Stock) {
             toastMsg({
@@ -56,7 +56,7 @@ export default function IceCreamUpdateModal({ id, getData, data }) {
             Price:price
           };
 
-        axios.patch(``, obj).then((res) => {
+        axios.patch(`http://localhost:3000/iceCream/${id}`, obj).then((res) => {
             console.log(res);
             toastMsg({
                 title: `IceCream data Updated successfully`,
@@ -125,7 +125,7 @@ export default function IceCreamUpdateModal({ id, getData, data }) {
                     </ModalBody>
                     <ModalFooter>
                         <Button onClick={() => {
-                            handleIceCreamUpdate()
+                            handleIceCreamUpdate(id)
                             onClose()
                         }}>Submit</Button>
                     </ModalFooter>
