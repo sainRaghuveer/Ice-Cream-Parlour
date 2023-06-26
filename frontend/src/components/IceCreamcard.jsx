@@ -14,7 +14,7 @@ const IceCreamCard = ({ data, getData, loading }) => {
         <Td>{data.Description}</Td>
         <Td>{data.Price}</Td>
         <Td>{data.Stock}</Td>
-        <Td>{<ActionMenu id={data._id} getData={getData} data={data} />}</Td>
+        <Td>{<ActionMenu id={data.id} getData={getData} data={data} />}</Td>
       </Tr>
     </>
   )

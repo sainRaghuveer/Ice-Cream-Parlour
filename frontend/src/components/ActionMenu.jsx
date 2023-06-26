@@ -22,7 +22,7 @@ const ActionMenu = ({ id, getData, data }) => {
     const toastMsg = UseToast();
 
     const handleDelete = useCallback(() => {
-        axios.delete(`/${id}`)
+        axios.delete(`http://localhost:3000/iceCream/${id}`)
             .then((res) => {
                 toastMsg({
                     title: `data deleted successfully`,

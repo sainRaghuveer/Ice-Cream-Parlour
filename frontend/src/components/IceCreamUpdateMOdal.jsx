@@ -33,6 +33,7 @@ export default function IceCreamUpdateModal({ id, getData, data }) {
     console.log("UpdateData", data)
 
     const handleIceCreamUpdate = async (id) => {
+        console.log("id", id)
         //If user will not provide any updates then we will not make any api call
         if (name == data.name && flavour==data.setFlavour && description==data.Description && price==data.Price && stock==data.Stock) {
             toastMsg({
