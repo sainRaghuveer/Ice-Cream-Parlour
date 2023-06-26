@@ -55,7 +55,7 @@ const AddIcecream = () => {
 
   return (
     <div>
-      <div style={{border:"1px solid gray"}}>
+      <div>
         <Box
           w={{ base: "100%", md: "48%" }}
           rounded={'lg'}
@@ -63,7 +63,7 @@ const AddIcecream = () => {
           p={8}
           margin="auto"
           marginTop="20px"
-          style={{border:"1px solid red"}}
+          style={{border:"1px solid gray"}}
         >
           <Stack spacing={4}>
             <FormControl id="Name">
