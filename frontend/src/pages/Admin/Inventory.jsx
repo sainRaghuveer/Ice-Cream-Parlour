@@ -45,7 +45,6 @@ const Home = () => {
       }
     } catch (error) {
       setLoading(false);
-      console.log('Error:', error);
       toastMsg({
         title: `${error.message}`,
         status: "error"

@@ -33,7 +33,6 @@ export default function Login() {
       password: password
     }
     axios.post(`https://reqres.in/api/login`, obj).then((res) => {
-      console.log(res);
       setToken(res.data.token);
       setLoading(false);
       sessionStorage.setItem('Rtoken', res.data.token);
@@ -44,7 +43,6 @@ export default function Login() {
       navigate("/inventory");
     }).catch((error) => {
       setLoading(false);
-      console.log(error);
       toastMsg({
         title: `${error.message}`,
         status: "error"

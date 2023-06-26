@@ -12,9 +12,11 @@ export const makePayment = async(amount) => {
         "image": "https://example.com/your_logo",
         "order_id": data.data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
         "handler": function (response) {
-            alert(response.razorpay_payment_id);
-            alert(response.razorpay_order_id);
-            alert(response.razorpay_signature)
+            // alert(response.razorpay_payment_id);
+            // alert(response.razorpay_order_id);
+            // alert(response.razorpay_signature)
+            alert("Payment successful")
+            window.navigator.vibrate(1000);
         },
         "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information, especially their phone number
             "name": "raghuveer Sain", //your customer's name

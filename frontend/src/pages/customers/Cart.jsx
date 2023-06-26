@@ -37,7 +37,6 @@ const Cart = () => {
       setLoading(true);
       const response = await fetch(`https://icecrem-parlour-assignment.onrender.com/cart`);
       const res = await response.json();
-      console.log(res)
       if (response.ok) {
         setData(res);
         setLoading(false);
@@ -46,14 +45,12 @@ const Cart = () => {
           let num = (el.Price * el.Quantity);
           sum += num;
         });
-        console.log("totalSum", sum)
         setTotal(sum);
       } else {
         console.log('Failed to fetch IceCream data');
       }
     } catch (error) {
       setLoading(false);
-      console.log('Error:', error);
       toastMsg({
         title: `${error.message}`,
         status: "error"
