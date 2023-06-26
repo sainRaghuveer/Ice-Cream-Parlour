@@ -36,7 +36,6 @@ const AddIcecream = () => {
     };
 
     setLoading(true);
-    setTimeout(() => {
       axios.post(`http://localhost:3000/iceCream`, obj).then((res) => {
         console.log(res);
         setLoading(false);
@@ -50,20 +49,21 @@ const AddIcecream = () => {
           title: `${error}`,
           status: "error"
         })
-      })
-    }, 2000);
+      });
   }
 
 
   return (
     <div>
-      <div className='inputContainer'>
+      <div style={{border:"1px solid gray"}}>
         <Box
           w={{ base: "100%", md: "48%" }}
           rounded={'lg'}
           bg={useColorModeValue('white', 'gray.700')}
           p={8}
-          id='child1'
+          margin="auto"
+          marginTop="20px"
+          style={{border:"1px solid red"}}
         >
           <Stack spacing={4}>
             <FormControl id="Name">

@@ -23,6 +23,14 @@
       "Description": "Fresh and fruity strawberry ice cream.",
       "Price": 300,
       "Stock": 90
+    },
+    {
+      "name": "Dark Chocolate",
+      "Flavour": "Mint",
+      "Description": "xyz",
+      "Stock": 86,
+      "Price": "130",
+      "id": 4
     }
   ],
   "cart": [
@@ -89,6 +97,13 @@
       "Price": 250,
       "Quantity": 1,
       "id": 8
+    },
+    {
+      "name": "Dark Chocolate",
+      "Description": "xyz",
+      "Price": "130",
+      "Quantity": "4",
+      "id": 9
     }
   ]
 }
