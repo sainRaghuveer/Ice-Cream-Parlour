@@ -69,11 +69,13 @@ const AddIcecream = () => {
               <FormLabel>Name</FormLabel>
               <Input type="text" placeholder='IceCream Name' value={name} onChange={(e) => setName(e.target.value)} />
             </FormControl>
-            <FormControl id="password">
-              <FormLabel>Select your Gender</FormLabel>
-              <Select placeholder='Select your gender' value={gender} onChange={(e) => setGender(e.target.value)}>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
+            <FormControl id="Flavour">
+              <FormLabel>Select Flavour</FormLabel>
+              <Select placeholder='Select Flavour' value={flavour} onChange={(e) => setFlavour(e.target.value)}>
+                <option value="Chocolate">Chocolate</option>
+                <option value="Vanilla">Vanilla</option>
+                <option value="Strawberry">Strawberry</option>
+                <option value="Mint">Mint</option>
               </Select>
             </FormControl>
             <FormControl id="email">
