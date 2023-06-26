@@ -45,7 +45,7 @@ const ActionMenu = ({ id, getData, data }) => {
                     {<BsThreeDotsVertical />}
                 </MenuButton>
                 <MenuList>
-                    <MenuItem >{<IceCreamUpdateModal/>}</MenuItem>
+                    <MenuItem >{<IceCreamUpdateModal id={id} getData={getData} data={data}/>}</MenuItem>
                     <MenuItem onClick={handleDelete}>{<DeleteIcon />} {" "}Delete</MenuItem>
                 </MenuList>
             </Menu>
