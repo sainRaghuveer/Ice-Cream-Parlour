@@ -1,7 +1,7 @@
 import axios from "axios";
-export const makePayment = async(amount) => {
+export const makePayment = async (amount, toastMsg) => {
     //Request to backend
-    const data = await axios.post(`https://tender-bear-school-uniform.cyclic.app/create-order`, {amount});
+    const data = await axios.post(`https://tender-bear-school-uniform.cyclic.app/create-order`, { amount });
 
     var options = {
         "key": "rzp_test_QYlrHuVo3qPFle", // Enter the Key ID generated from the Dashboard
@@ -15,8 +15,11 @@ export const makePayment = async(amount) => {
             // alert(response.razorpay_payment_id);
             // alert(response.razorpay_order_id);
             // alert(response.razorpay_signature)
-            alert("Payment successful")
             window.navigator.vibrate(1000);
+            toastMsg({
+                title: `Payment successful`,
+                status: "success"
+            })
         },
         "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information, especially their phone number
             "name": "raghuveer Sain", //your customer's name
@@ -32,14 +35,14 @@ export const makePayment = async(amount) => {
     };
 
     var rzp1 = new window.Razorpay(options);
-//     rzp1.on('payment.failed', function (response){
-//         alert(response.error.code);
-//         alert(response.error.description);
-//         alert(response.error.source);
-//         alert(response.error.step);
-//         alert(response.error.reason);
-//         alert(response.error.metadata.order_id);
-//         alert(response.error.metadata.payment_id);
-// });
+    //     rzp1.on('payment.failed', function (response){
+    //         alert(response.error.code);
+    //         alert(response.error.description);
+    //         alert(response.error.source);
+    //         alert(response.error.step);
+    //         alert(response.error.reason);
+    //         alert(response.error.metadata.order_id);
+    //         alert(response.error.metadata.payment_id);
+    // });
     rzp1.open();
 }

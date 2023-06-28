@@ -69,7 +69,7 @@ const Cart = () => {
 
   const handlePayment = () => {
     setPaymentLoading(true);
-    makePayment(total);
+    makePayment(total, toastMsg);
     setPaymentLoading(false);
   }
 
