@@ -15,7 +15,7 @@ import {
   Skeleton,
 } from "@chakra-ui/react";
 import "../../styles/IceCream.css";
-import { AiOutlinePlus } from "react-icons/ai"
+import { FaCartArrowDown} from "react-icons/fa"
 import { useNavigate } from 'react-router-dom';
 import UseToast from '../../customHook/UseToast';
 import { Spinner } from '@chakra-ui/react'
@@ -23,7 +23,7 @@ import UserIceCreamCard from '../../components/UserIceCearmCard';
 
 const Home = () => {
   const [data, setData] = useState([]);
-  const [csvLoading, setCsvLoading] = useState(false);
+  const [cart, setCart] = useState(0);
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
@@ -35,7 +35,9 @@ const Home = () => {
       setLoading(true);
       const response = await fetch(`https://icecrem-parlour-assignment.onrender.com/iceCream`);
       const res = await response.json();
-      console.log(res)
+      const cartResponse = await fetch(`https://icecrem-parlour-assignment.onrender.com/cart`);
+      const cartRes = await cartResponse.json();
+      setCart(cartRes.length);
       if (response.ok) {
         setData([]);
         setData(res);
@@ -76,7 +78,7 @@ const Home = () => {
         </div>
         <div>
           <Button onClick={() => navigate("/inventory")}>Admin</Button>
-        <Button onClick={()=>navigate("/cart")}>{"Cart"}</Button>
+        <Button onClick={()=>navigate("/cart")}>{<FaCartArrowDown/>}{`:-${cart}`}</Button>
         </div>
       </div>
       <div className='tableContainer'>

@@ -1,18 +1,14 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Button,
   Input,
   Table,
   Thead,
   Tbody,
-  Tfoot,
   Tr,
   Th,
-  Td,
   TableCaption,
   TableContainer,
-  useToast,
-  Skeleton,
   Box,
 } from "@chakra-ui/react";
 import "../../styles/IceCream.css";
