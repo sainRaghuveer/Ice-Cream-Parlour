@@ -7,29 +7,31 @@ import UseToast from '../customHook/UseToast';
 
 
 
-const UserIceCreamCard = ({ data, getData, loading }) => {
+const UserIceCreamCard = ({ data, getData }) => {
   const [iceCream, setIceCream] = useState(1);
+  const [loading, setLoading] = useState(false);
   const [stocks, setStock] = useState(data.stock);
   const toastMsg = UseToast();
 
-  const handleCart=()=>{
-    let remainingStocks = (data.Stock-iceCream);
+  const handleCart = () => {
+    let remainingStocks = (data.Stock - iceCream);
 
-    let obj={
-      name:data.name,
-      Flavor:data.Flavor,
-      Description:data.Description,
-      Price:data.Price,
-      Quantity:iceCream
+    let obj = {
+      name: data.name,
+      Flavor: data.Flavor,
+      Description: data.Description,
+      Price: data.Price,
+      Quantity: iceCream
     }
-    
-    axios.post(`https://icecrem-parlour-assignment.onrender.com/cart`,obj).then((res)=>{
-      console.log(res);
+    setLoading(true);
+    axios.post(`https://icecrem-parlour-assignment.onrender.com/cart`, obj).then((res) => {
+      setLoading(false);
       toastMsg({
         title: `Added into cart`,
         status: "success"
       });
-    }).catch((error)=>{
+    }).catch((error) => {
+      setLoading(false);
       console.log(error);
       toastMsg({
         title: `${error.message}`,
@@ -37,10 +39,10 @@ const UserIceCreamCard = ({ data, getData, loading }) => {
       });
     });
 
-    axios.patch(`http://localhost:3000/iceCream/${data.id}`, {Stock:remainingStocks}).then((res)=>{
+    axios.patch(`http://localhost:3000/iceCream/${data.id}`, { Stock: remainingStocks }).then((res) => {
       console.log(res);
       getData();
-    }).catch((error)=>{
+    }).catch((error) => {
       console.log(error);
     });
   }
@@ -53,7 +55,14 @@ const UserIceCreamCard = ({ data, getData, loading }) => {
         <Td>{data.Description}</Td>
         <Td>{data.Price}</Td>
         <Td>{data.Stock}</Td>
-        <Td><Input value={iceCream} onChange={(e)=>setIceCream(e.target.value)} width={"100px"} border={"1px solid gray"} type="number" placeHolder="IceCream"></Input><Button onClick={handleCart} isDisabled={data.Stock<=0}> {"Add to Cart"}</Button></Td>
+        <Td><Input value={iceCream} onChange={(e) => setIceCream(e.target.value)} width={"100px"} border={"1px solid gray"} type="number" placeHolder="IceCream"></Input>{loading ? <Button
+          isLoading
+          loadingText='Adding'
+          colorScheme='teal'
+          variant='outline'
+        >
+          Submit
+        </Button> : <Button onClick={handleCart} isDisabled={data.Stock <= 0}> {"Add to Cart"}</Button>}</Td>
       </Tr>
     </>
   )

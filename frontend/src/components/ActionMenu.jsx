@@ -4,13 +4,9 @@ import {
     MenuButton,
     MenuList,
     MenuItem,
-    MenuItemOption,
-    MenuGroup,
-    MenuOptionGroup,
-    MenuDivider,
     Button
 } from '@chakra-ui/react';
-import { ChevronDownIcon, EditIcon, DeleteIcon } from "@chakra-ui/icons";
+import { DeleteIcon } from "@chakra-ui/icons";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -45,7 +41,7 @@ const ActionMenu = ({ id, getData, data }) => {
                     {<BsThreeDotsVertical />}
                 </MenuButton>
                 <MenuList>
-                    <MenuItem >{<IceCreamUpdateModal id={id} getData={getData} data={data}/>}</MenuItem>
+                    <MenuItem >{<IceCreamUpdateModal id={id} getData={getData} data={data} />}</MenuItem>
                     <MenuItem onClick={handleDelete}>{<DeleteIcon />} {" "}Delete</MenuItem>
                 </MenuList>
             </Menu>

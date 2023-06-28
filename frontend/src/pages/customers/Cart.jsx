@@ -58,14 +58,8 @@ const Cart = () => {
     }
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
+  useEffect(() => { 
       getData();
-    }, 0);
-
-    return () => {
-      clearTimeout(timer);
-    };
   }, [total]);
 
 
