@@ -4,7 +4,7 @@ import { DeleteIcon } from "@chakra-ui/icons";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
 
-const CartCard = ({ data, getData, loading }) => {
+const CartCard = ({ data }) => {
 
   return (
     <>
