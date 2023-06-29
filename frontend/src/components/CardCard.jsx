@@ -5,8 +5,6 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 
 
 const CartCard = ({ data }) => {
-  console.log("data", data);
-
   return (
     <>
       <Tr style={{ border: "2px solid teal" }}>
