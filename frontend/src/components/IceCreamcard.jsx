@@ -1,10 +1,8 @@
 import React from 'react';
-import { Tr, Td, Image, Skeleton } from "@chakra-ui/react";
-import { DeleteIcon } from "@chakra-ui/icons";
-import { BsThreeDotsVertical } from "react-icons/bs";
+import { Tr, Td } from "@chakra-ui/react";
 import ActionMenu from './ActionMenu';
 
-const IceCreamCard = ({ data, getData, loading }) => {
+const IceCreamCard = ({ data, getData }) => {
   return (
     <>
       <Tr style={{ border: "2px solid teal" }}>
