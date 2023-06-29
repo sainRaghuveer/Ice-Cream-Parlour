@@ -20,10 +20,10 @@ export const makePayment = async (amount, toastMsg) => {
             toastMsg({
                 title: `Payment successful`,
                 status: "success"
-            })
+            });
         },
         "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information, especially their phone number
-            "name": "raghuveer Sain", //your customer's name
+            "name": "Raghuveer Sain", //your customer's name
             "email": "raghuveersain987@gmail.com",
             "contact": "+918440874898"  //Provide the customer's phone number for better conversion rates 
         },
@@ -36,14 +36,18 @@ export const makePayment = async (amount, toastMsg) => {
     };
 
     var rzp1 = new window.Razorpay(options);
-    //     rzp1.on('payment.failed', function (response){
-    //         alert(response.error.code);
-    //         alert(response.error.description);
-    //         alert(response.error.source);
-    //         alert(response.error.step);
-    //         alert(response.error.reason);
-    //         alert(response.error.metadata.order_id);
-    //         alert(response.error.metadata.payment_id);
-    // });
+        rzp1.on('payment.failed', function (response){
+            // alert(response.error.code);
+            // alert(response.error.description);
+            // alert(response.error.source);
+            // alert(response.error.step);
+            // alert(response.error.reason);
+            // alert(response.error.metadata.order_id);
+            // alert(response.error.metadata.payment_id);
+            toastMsg({
+                title: `Payment failed`,
+                status: "error"
+            });
+    });
     rzp1.open();
 }
