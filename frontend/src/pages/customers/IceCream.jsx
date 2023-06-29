@@ -15,7 +15,7 @@ import {
   Skeleton,
 } from "@chakra-ui/react";
 import "../../styles/IceCream.css";
-import { FaCartArrowDown} from "react-icons/fa"
+import { FaCartArrowDown } from "react-icons/fa"
 import { useNavigate } from 'react-router-dom';
 import UseToast from '../../customHook/UseToast';
 import { Spinner } from '@chakra-ui/react'
@@ -55,13 +55,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      getData();
-    }, 0);
-
-    return () => {
-      clearTimeout(timer);
-    };
+    getData();
   }, []);
 
 
@@ -78,7 +72,7 @@ const Home = () => {
         </div>
         <div>
           <Button onClick={() => navigate("/inventory")}>Admin</Button>
-        <Button onClick={()=>navigate("/cart")}>{<FaCartArrowDown/>}{`:-${cart}`}</Button>
+          <Button onClick={() => navigate("/cart")}>{<FaCartArrowDown />}{`:-${cart}`}</Button>
         </div>
       </div>
       <div className='tableContainer'>
@@ -97,7 +91,7 @@ const Home = () => {
               </Tr>
             </Thead>
             <Tbody>
-              {loading ?<div id='loader'> <Spinner
+              {loading ? <div id='loader'> <Spinner
                 thickness='4px'
                 speed='0.65s'
                 emptyColor='gray.200'
