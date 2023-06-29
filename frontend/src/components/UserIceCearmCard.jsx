@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { Tr, Td, Image, Skeleton, Button, Input } from "@chakra-ui/react";
-import { DeleteIcon } from "@chakra-ui/icons";
-import { BsThreeDotsVertical } from "react-icons/bs";
+import { Tr, Td, Button, Input } from "@chakra-ui/react";
 import axios from 'axios';
 import UseToast from '../customHook/UseToast';
 
