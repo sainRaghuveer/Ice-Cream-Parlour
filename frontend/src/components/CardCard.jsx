@@ -5,12 +5,13 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 
 
 const CartCard = ({ data }) => {
+  console.log("data", data);
 
   return (
     <>
       <Tr style={{ border: "2px solid teal" }}>
         <Td>{data.id}</Td>
-        <Td>{data.name}{" "}{data.lastName}</Td>
+        <Td>{data.name}</Td>
         <Td>{data.Flavor}</Td>
         <Td>{data.Description}</Td>
         <Td>{data.Price}</Td>
