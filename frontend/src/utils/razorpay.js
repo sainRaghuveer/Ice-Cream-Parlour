@@ -46,7 +46,7 @@ export const makePayment = async (amount, toastMsg) => {
             // alert(response.error.metadata.payment_id);
             toastMsg({
                 title: `Payment failed`,
-                status: "error"
+                status: `${response.error.reason}`
             });
     });
     rzp1.open();
