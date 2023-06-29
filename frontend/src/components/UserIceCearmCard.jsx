@@ -10,7 +10,6 @@ const UserIceCreamCard = ({ data, getData }) => {
   const [loading, setLoading] = useState(false);
   const [stocks, setStock] = useState(data.stock);
   const toastMsg = UseToast();
-
   const handleCart = () => {
     let remainingStocks = (data.Stock - iceCream);
 
