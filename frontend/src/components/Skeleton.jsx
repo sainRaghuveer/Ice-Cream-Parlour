@@ -1,7 +1,6 @@
 import { Skeleton, SkeletonCircle, SkeletonText, Stack, Box } from '@chakra-ui/react';
 import React, { useState } from "react"
 export const SkeletonE = () => {
-  const [isLoaded, setIsLoaded] = useState(false)
   return (
     <Stack padding={4} spacing={1} marginLeft={"10px"} marginRight={"10px"} margin={"auto"}>
       <Skeleton
