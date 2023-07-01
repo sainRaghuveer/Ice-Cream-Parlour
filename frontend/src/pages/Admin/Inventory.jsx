@@ -5,14 +5,10 @@ import {
   Table,
   Thead,
   Tbody,
-  Tfoot,
   Tr,
   Th,
-  Td,
   TableCaption,
   TableContainer,
-  useToast,
-  Skeleton,
 } from "@chakra-ui/react";
 import "../../styles/IceCream.css";
 import { AiOutlinePlus } from "react-icons/ai"
