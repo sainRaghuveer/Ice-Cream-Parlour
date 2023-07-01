@@ -3,7 +3,7 @@ export const makePayment = async (amount, toastMsg) => {
     //Request to backend
     const data = await axios.post(`https://tender-bear-school-uniform.cyclic.app/create-order`, { amount });
 
-    //options
+    //options Creating
     var options = {
         "key": "rzp_test_QYlrHuVo3qPFle", // Enter the Key ID generated from the Dashboard
         "amount": +data.data.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
