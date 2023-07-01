@@ -16,6 +16,7 @@ export const makePayment = async (amount, toastMsg) => {
             // alert(response.razorpay_payment_id);
             // alert(response.razorpay_order_id);
             // alert(response.razorpay_signature)
+
             window.navigator.vibrate(1000);
             toastMsg({
                 title: `Payment successful`,
@@ -44,6 +45,7 @@ export const makePayment = async (amount, toastMsg) => {
             // alert(response.error.reason);
             // alert(response.error.metadata.order_id);
             // alert(response.error.metadata.payment_id);
+            
             toastMsg({
                 title: `Payment failed`,
                 status: `${response.error.reason}`
