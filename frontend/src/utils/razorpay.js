@@ -8,7 +8,7 @@ export const makePayment = async (amount, toastMsg) => {
         "key": "rzp_test_QYlrHuVo3qPFle", // Enter the Key ID generated from the Dashboard
         "amount": +data.data.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
         "currency": "INR",
-        "name": "Raghuveer Sain Co.", //your business name
+        "name": "Raghuveer Sain Co. Pvt Ltd", //your business name
         "description": "Test Transaction",
         "image": "https://example.com/your_logo",
         "order_id": data.data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
