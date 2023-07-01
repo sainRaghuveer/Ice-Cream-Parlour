@@ -33,7 +33,6 @@ export default function IceCreamUpdateModal({ id, getData, data }) {
     console.log("UpdateData", data)
 
     const handleIceCreamUpdate = async (id) => {
-        console.log("id", id)
         //If user will not provide any updates then we will not make any api call
         if (name == data.name && flavour==data.setFlavour && description==data.Description && price==data.Price && stock==data.Stock) {
             toastMsg({
@@ -58,7 +57,7 @@ export default function IceCreamUpdateModal({ id, getData, data }) {
           };
 
         axios.patch(`https://icecrem-parlour-assignment.onrender.com/${id}`, obj).then((res) => {
-            console.log(res);
+            console.log("res",res);
             toastMsg({
                 title: `IceCream data Updated successfully`,
                 status: "success"
@@ -66,7 +65,7 @@ export default function IceCreamUpdateModal({ id, getData, data }) {
             getData();
         }).catch((error) => {
             toastMsg({
-                title: `${error.message}`,
+                title: `error:- ${error.message}`,
                 status: "error"
             });
         })
