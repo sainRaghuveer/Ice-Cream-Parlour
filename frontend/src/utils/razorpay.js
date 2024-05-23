@@ -1,7 +1,7 @@
 import axios from "axios";
 export const makePayment = async (amount, toastMsg) => {
     //Request to backend
-    const data = await axios.post(`https://tender-bear-school-uniform.cyclic.app/create-order`, { amount });
+    const data = await axios.post(`https://razorpay-backend-x8nb.onrender.com/create-order`, { amount });
 
     //options Creating
     var options = {
