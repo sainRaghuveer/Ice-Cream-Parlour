@@ -5,7 +5,7 @@ export const makePayment = async (amount, toastMsg) => {
 
     //options Creating
     var options = {
-        "key": "rzp_test_QYlrHuVo3qPFle", // Enter the Key ID generated from the Dashboard
+        "key": "rzp_test_fEzKbpdD1kPh8D", // Enter the Key ID generated from the Dashboard
         "amount": +data.data.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
         "currency": "INR",
         "name": "Raghuveer Sain Co. Pvt Ltd", //your business name
