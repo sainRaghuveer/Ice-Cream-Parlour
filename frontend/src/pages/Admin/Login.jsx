@@ -33,7 +33,7 @@ export default function Login() {
       password: password
     }
     axios.post(`https://reqres.in/api/login`, obj).then((res) => {
-      setToken(res.data.token);
+      setToken(res.token);
       setLoading(false);
       sessionStorage.setItem('Rtoken', res.data.token);
       toastMsg({
