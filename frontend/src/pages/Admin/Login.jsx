@@ -35,7 +35,7 @@ export default function Login() {
     axios.post(`https://reqres.in/api/login`, obj).then((res) => {
       setToken(res.token);
       setLoading(false);
-      sessionStorage.setItem('Rtoken', res.data.token);
+      sessionStorage.setItem('Rtoken', res.token);
       toastMsg({
         title: `Admin logged in successfully`,
         status: "success"
